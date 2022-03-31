@@ -1,0 +1,131 @@
+front end    next js
+cms fro content managmnet system
+admin panel  for all detils 
+database
+graphql
+
+nextauth for authentication 
+adminjs for admin panel
+google analytics for analytic in app
+super base
+firebase
+
+
+List of all webapps with quran 
+
+Domin namwe
+alquran.com
+qurankarim.com
+islamandquran.com
+
+
+
+ basci Model 
+  SCRAPE ADD DATA FROM THE APP 
+  load that Data from it and  use it in my APP 
+    Host it in an server
+
+
+
+    https://alqurankarim.net/
+    https://beta.quran.com/ar
+    https://www.github.com/quran
+    https://github.com/quran/quran.com
+    also search on github AND get the data from their
+    https://en.wikipedia.org/wiki/Quran 
+    also get Data from the wikipedia
+
+
+    https://www.dawateislami.net/quran/
+    https://www.alim.org/
+
+    have deatils of Tafser and hadiyes
+
+    
+    //APIS  for data transfer
+  Most of apis are free avalible  in different languages 
+  build my own api and host in a cloud 
+
+    https://quran.api-docs.io/v4/chapters/list-chapters
+    https://github.com/fawazahmed0/quran-api
+    https://alquran.cloud/api
+    salamquran.com    
+    
+    
+    
+    
+    // FRONT END  only
+    20 dollar per month is fees for versal
+    
+    //BACK end and Database
+
+Features
+ 
+
+ Survay
+ 
+Basic user system
+real time chat app
+email sender
+viedo streaming Platform
+content mangmnet system
+Real Time chat with app admin 
+Online documnets
+creat PROFILE of users
+Schedules for students 
+Must have free featurs for students 
+Download able content 
+Accounts on the socila medias sites 
+
+for quiz of students    Post data to the server 
+https://reactjsexample.com/tag/quiz/
+
+Prevent Bots 
+ Alternatives to Akamai Bot Manager 
+
+
+react  tracker  is librray used to trasck user in an app 
+
+basic sury for the users 
+
+who user is 
+  How muchtime he speed on app
+  What is intresrted of 
+  Ip 
+  lOcation
+ Timing of user 
+ alot of more info 
+ use  Data to improve the web app
+
+Running adds on a web site 
+Notifications  to user 
+Chart and  confress with the user 
+dashboard to user 
+protect site from Bots
+add captches to a site 
+
+time tracke of react app
+npm i react-time-tracker 
+Bloack a user or delet the user from the app
+
+practice js a awsome js library 
+
+
+
+
+
+
+
+PROFILE
+// geneuio and genaric
+
+viedo platform app
+https://github.com/fmeringdal/nettu-meet
+
+CV
+https://github.com/awahids/awahids.github.io
+
+
+
+
+ # Rough work 

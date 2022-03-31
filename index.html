@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Canvas </title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+    p{
+        background-color: darkorange;
+        color: rgb(200, 20, 224);
+        font-size: 3em;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        width: 100%;
+
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-wrap: wrap;
+        z-index: -1;
+        opacity: 0.9;
+    }
+        /* show as a shpear  */
+    
+        h1{
+            animation: spin 1s linear infinite;
+            transition: all 1s linear;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg)
+                 translate(0, 0)
+                 scale3d(1, 1, 1)
+                 ;
+            }
+            100% {
+                transform: rotate(20deg)
+                     translate(15px, 10px)
+                     scale3d(0.5, 0.5, 0.5)
+            }    
+        }
+    
+</style>
+<body id="body">
+  
+            <!-- <p onclick="canvasAnimation">Canvas in action</p> -->
+            <p>This is a Basic Eample of Aimation with Javascaript</p>    
+            <section> 
+                <h1>Canvas in action</h1>
+                <h1 id="pak">Background</h1>
+                <h1 id="bo">Body</h1>
+                <h1 id="text">text</h1>
+            </section>    
+            <!-- <canvas id="canvas" width="400" height="400"></canvas> -->
+
+</body>
+<!-- add js script to file -->
+<script>
+    function Ha(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var x = canvas.width/2;
+        var y = canvas.height/2;
+        var radius = 75;
+        var startAngle = 0;
+        var endAngle = 2*Math.PI;
+        var counterClockwise = false;
+        ctx.beginPath();
+        ctx.arc(x,y,radius,startAngle,endAngle,counterClockwise);
+        ctx.stroke();
+
+        // colors
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        // text
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("Hello ",x-50,y+10);
+
+        // line
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        ctx.lineTo(x+100,y+100);
+        ctx.stroke();
+         
+        // chnage position every second
+        setInterval(function(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.beginPath();
+            ctx.arc(x,y,radius,startAngle,endAngle,counterClockwise);
+            ctx.stroke();
+            ctx.fillStyle = "black";
+            ctx.fill();
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Hello ",x-50,y+10);
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            ctx.lineTo(x+1000,y+1000);
+            ctx.stroke();
+            x = x + 1;
+            y = y + 1;
+        },100);
+ 
+    }
+    // Ha()
+
+    function Hamza(){
+        // select randam value with in range of 0 to 255
+        // set Baackground color of body to linear gradient that are value od colour chnaging
+        let Aa=""
+        let Ba=""
+        let Ca=""
+
+
+        const bo=document.getElementById("bo");
+        const text=document.getElementById("text");
+        const pak=document.getElementById("pak");
+        
+        function all(pa){
+        pa.style.fontSize = "2em";
+        pa.style.fontFamily = "Arial";
+        pa.style.textAlign = "center";
+        pa.style.color = "black";
+        pa.style.backgroundColor = "black";
+        pa.style.padding = "10px";
+        pa.style.borderRadius = "50%";
+        pa.style.border = "2px solid white";
+        pa.style.margin = "10px";
+        pa.style.width =  "250px";
+        pa.style.height = "250px";
+        pa.style.display = "flex";
+        pa.style.justifyContent = "center";
+        pa.style.justifyContent = "center";
+        pa.style.alignItems = "center";
+        pa.style.transition = "all 1s";
+        }
+        all(bo);
+        all(text);
+        all(pak);
+    
+        function changeColor(){
+            var r = Math.floor(Math.random()*255);
+            var g = Math.floor(Math.random()*255);
+            var b = Math.floor(Math.random()*255);
+            bo.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+            bo.innerText = "rgb("+r+","+g+","+b+")";
+            Aa="rgb("+r+","+g+","+b+")";
+        }
+        setInterval(changeColor,1000);
+           
+        function changeCo(){
+            var r = Math.floor(Math.random()*255);
+            var g = Math.floor(Math.random()*255);
+            var b = Math.floor(Math.random()*255);
+            var color= "rgb("+r+","+g+","+b+")";
+            pak.style.backgroundColor = color;    
+            pak.innerText = color;
+            Ba=color;   
+            
+        }
+        setInterval(changeCo,1000);
+        
+        function changeBo(){
+            var r = Math.floor(Math.random()*255);
+            var g = Math.floor(Math.random()*255);
+            var b = Math.floor(Math.random()*255);
+            var color= "rgb("+r+","+g+","+b+")";
+            text.style.backgroundColor = color;
+            text.innerText = color;        
+            Ca=color;
+        }
+        setInterval(changeBo,1000);
+
+            
+
+        function Animatio(){
+                var x = Math.floor(Math.random()*window.innerWidth/5 );
+                var y = Math.floor(Math.random()*window.innerHeight/2 );
+            let aa=pak.style;
+            let bb=bo.style;
+            let cc=text.style;
+            aa.transform= `translate(${x}px,${y}px)`;
+            bb.transform= `translate(${x}px,${y}px)`;
+            cc.transform= `translate(${x}px,${y}px)`;
+            document.body.transition = "all 1s linear";
+            document.body.style.backgroundImage = `linear-gradient(to right,${Aa},${Ba},${Ca})`;
+ 
+        }
+        setInterval(Animatio,1000);
+
+ 
+
+
+        function catculateViewArea(){
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            console.log(width,height);
+        }
+        catculateViewArea();
+
+
+    }
+    // error Handeler pass a function
+     function Handeler(func){
+        try{
+            func;
+        }
+        catch(e){
+            console.log(e);
+        }
+     }
+
+      Handeler(Hamza());  
+
+
+// Animation in web page
+
+
+function canvasAnimation() {
+    var t = document.querySelector('canvas'),
+        o = t.getContext('2d');
+    t.width = window.innerWidth,
+        t.height = window.innerHeight,
+        o.lineWidth = 0.5,
+        o.strokeStyle = new y(150).style;
+    var n = {
+            x: t.width / 2,
+            y: t.height / 2
+        },
+        a = !1;
+    'undefined' != typeof homeCanvas && !0 === homeCanvas && (a = homeCanvas);
+    var r = 350;
+    t.width < 1400 && (r = 200);
+    var d = {
+        nb: r,
+        distance: 100,
+        d_radius: 150,
+        array: []
+    };
+
+    function e(i) {
+        return Math.floor(255 * Math.random() + i)
+    }
+
+    function h(i, t, o) {
+        return !0 === a ? 'rgba(255,255,255, 0.8)' : 'rgba(28,114,184, 0.8)'
+    }
+
+    function s(i, t, o, n) {
+        return (i * t + o * n) / (t + n)
+    }
+
+    function y(i) {
+        i = i || 0,
+            this.r = e(i),
+            this.g = e(i),
+            this.b = e(i),
+            this.style = h(this.r, this.g, this.b)
+    }
+
+    function u() {
+        this.x = Math.random() * t.width,
+            this.y = Math.random() * t.height,
+            this.vx = -0.5 + Math.random(),
+            this.vy = -0.5 + Math.random(),
+            this.radius = 2 * Math.random(),
+            this.color = new y
+    }
+    u.prototype = {
+            draw: function() {
+                o.beginPath(),
+                    o.fillStyle = this.color.style,
+                    o.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, !1),
+                    o.fill()
+            }
+        },
+        $('body').on('mousemove', function(i) {
+            n.x = i.pageX,
+                n.y = i.pageY
+        }),
+        function() {
+            for (i = 0; i < d.nb; i++) d.array.push(new u)
+        }(),
+        requestAnimationFrame(function a() {
+            o.clearRect(0, 0, t.width, t.height),
+                function() {
+                    for (i = 0; i < d.nb; i++) {
+                        var o = d.array[i];
+                        o.y < 0 || o.y > t.height ? (o.vx = o.vx, o.vy = -o.vy) : (o.x < 0 || o.x > t.width) && (o.vx = -o.vx, o.vy = o.vy),
+                            o.x += o.vx,
+                            o.y += o.vy
+                    }
+                }(),
+                function() {
+                    for (i = 0; i < d.nb; i++)
+                        for (j = 0; j < d.nb; j++) i_dot = d.array[i],
+                            j_dot = d.array[j],
+                            i_dot.x - j_dot.x < d.distance && i_dot.y - j_dot.y < d.distance && i_dot.x - j_dot.x > -d.distance && i_dot.y - j_dot.y > -d.distance && i_dot.x - n.x < d.d_radius && i_dot.y - n.y < d.d_radius && i_dot.x - n.x > -d.d_radius && i_dot.y - n.y > -d.d_radius && (o.beginPath(), o.strokeStyle = (t = i_dot, a = j_dot, r = void 0, e = void 0, y = void 0, u = void 0, c = void 0, r = t.color, e = a.color, y = s(r.r, t.radius, e.r, a.radius), u = s(r.g, t.radius, e.g, a.radius), c = s(r.b, t.radius, e.b, a.radius), h(Math.floor(y), Math.floor(u), Math.floor(c))), o.moveTo(i_dot.x, i_dot.y), o.lineTo(j_dot.x, j_dot.y), o.stroke(), o.closePath());
+                    var t,
+                        a,
+                        r,
+                        e,
+                        y,
+                        u,
+                        c
+                }(),
+                function() {
+                    for (i = 0; i < d.nb; i++) d.array[i].draw()
+                }(),
+                requestAnimationFrame(a)
+        })
+}
+
+// $(document).ready(function() {
+//         canvasAnimation()
+//     }),
+//     $(window).resize(function() {
+//         canvasAnimation()
+//     });
+
+</script>
+
+</html>
